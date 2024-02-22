@@ -7,6 +7,7 @@ class ListNoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: EdgeInsets.zero,
       itemCount: 5,
       itemBuilder: (BuildContext context, int index) {
         return const Padding(
