@@ -47,8 +47,12 @@ class NoteItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                trailing: const FaIcon(
-                  FontAwesomeIcons.trash,
+                trailing: IconButton(
+                  onPressed: () => note.delete(),
+                  icon: const Icon(
+                    Icons.delete,
+                    size: 30,
+                  ),
                   color: Colors.black,
                 ),
               ),
