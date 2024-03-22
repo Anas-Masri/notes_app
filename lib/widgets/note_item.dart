@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/notes_edite_view.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({
     super.key,
+    required this.note,
   });
-
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,15 +25,15 @@ class NoteItem extends StatelessWidget {
           padding:
               const EdgeInsets.only(left: 16, top: 24, bottom: 24, right: 16),
           decoration: BoxDecoration(
-              color: const Color(0xfffece84),
+              color: Color(note.color),
               borderRadius: BorderRadius.circular(18)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                title: const Text(
-                  'Flutter Tips',
-                  style: TextStyle(fontSize: 25, color: Colors.black),
+                title: Text(
+                  note.title,
+                  style: const TextStyle(fontSize: 25, color: Colors.black),
                 ),
                 subtitle: Column(
                   children: [
@@ -39,7 +41,7 @@ class NoteItem extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      'Bulild your career with tharwat samy',
+                      note.subTitle,
                       style: TextStyle(
                           fontSize: 18, color: Colors.black.withOpacity(.5)),
                     ),
@@ -53,7 +55,7 @@ class NoteItem extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 24, top: 10),
                 child: Text(
-                  'MAY 21 , 2022',
+                  note.data,
                   style: TextStyle(
                       fontSize: 14, color: Colors.black.withOpacity(.5)),
                 ),
