@@ -6,7 +6,10 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     required this.title,
     required this.icon,
+    this.onPressed,
   });
+  final void Function()? onPressed;
+
   final String title;
   final IconData icon;
   @override
@@ -20,7 +23,8 @@ class CustomAppBar extends StatelessWidget {
             style: const TextStyle(fontSize: 28),
           ),
           const Spacer(),
-          CostumSearchButton(
+          CostumIconButton(
+            onPressed: onPressed,
             icon: icon,
           ),
         ],

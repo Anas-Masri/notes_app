@@ -9,8 +9,10 @@ class CustomTextField extends StatelessWidget {
     required this.hint,
     this.maxlines = 1,
     this.onSaved,
+    this.onChanged,
   }) : super(key: key);
   final void Function(String?)? onSaved;
+  final void Function(String)? onChanged;
   final String hint;
   final int maxlines;
 
@@ -25,6 +27,7 @@ class CustomTextField extends StatelessWidget {
         }
       },
       onSaved: onSaved,
+      onChanged: onChanged,
       maxLines: maxlines,
       cursorColor: kPrimaryColor,
       decoration: InputDecoration(

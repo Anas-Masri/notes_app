@@ -22,19 +22,20 @@ class _NotesViewBodyState extends State<NotesViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 25,
         ),
         CustomAppBar(
+          onPressed: () {},
           icon: Icons.search,
           title: 'Notes',
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
-        Expanded(child: ListNoteItem()),
+        const Expanded(child: ListNoteItem()),
       ],
     );
   }

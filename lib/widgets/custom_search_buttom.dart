@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CostumSearchButton extends StatelessWidget {
-  const CostumSearchButton({
+class CostumIconButton extends StatelessWidget {
+  const CostumIconButton({
     super.key,
     required this.icon,
+    this.onPressed,
   });
+  final void Function()? onPressed;
   final IconData icon;
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,10 @@ class CostumSearchButton extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
           color: Colors.white.withOpacity(0.1)),
-      child: Icon(icon),
+      child: IconButton(
+        icon: Icon(icon),
+        onPressed: onPressed,
+      ),
     );
   }
 }
