@@ -39,6 +39,7 @@ class NoteItem extends StatelessWidget {
                   style: const TextStyle(fontSize: 25, color: Colors.black),
                 ),
                 subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(
                       height: 10,
